@@ -1,72 +1,173 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Agent_Banking_Profiling.SiteMaster" %>
 
 <!DOCTYPE html>
-
 <html lang="en">
-<head runat="server">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
 
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!-- Title Page-->
+    <title>Agent Banking Profiler</title>
 
+    <!-- Fontfaces CSS-->
+    <link href="assets/css/font-face.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="assets/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="assets/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="assets/css/theme.css" rel="stylesheet" media="all">
 </head>
-<body>
-    <form runat="server">
-        <asp:ScriptManager runat="server">
-            <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="bootstrap" />
-                <asp:ScriptReference Name="respond" />
-                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
-            </Scripts>
-        </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+<body class="animsition">
+    <form id="form1" runat="server">
+        <div class="page-wrapper">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop3 d-none d-lg-block">
+                <div class="section__content section__content--p35">
+                    <div class="header3-wrap">
+                        <div class="header__logo">
+                            <a href="#">
+                                <img src="assets/images/icon/logo-white.png" alt="CoolAdmin" />
+                            </a>
+                        </div>
+                        <div class="header__navbar">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="dashboard.aspx">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        <span class="bot-line"></span>Dashboard</a>
+                                </li>
+                                <li class="has-sub">
+                                    <a href="#">
+                                        <i class="fas fa-shopping-basket"></i>Agent Banking Profiler
+                                   
+                                    <span class="bot-line"></span>
+                                    </a>
+                                    <ul class="header3-sub-list list-unstyled">
+                                        <li>
+                                            <a href="profilenewagent.aspx">Profile New Agent</a>
+                                        </li>
+                                        <li>
+                                            <a href="updateagentdetails.aspx">Update Agent Details</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-shopping-basket"></i>
+                                        <span class="bot-line"></span>Approve Agent Banking Profiling Request</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="account-wrap">
+                            <div class="account-item account-item--style2 clearfix js-item-menu">
+                                <div class="image">
+                                    <img src="assets/images/icon/avatar-01.jpg" alt="John Doe" />
+                                </div>
+                                <div class="content">
+                                    <a class="js-acc-btn" href="#">john doe</a>
+                                </div>
+                                <div class="account-dropdown js-dropdown">
+                                    <div class="info clearfix">
+                                        <div class="image">
+                                            <a href="#">
+                                                <img src="assets/images/icon/avatar-01.jpg" alt="John Doe" />
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <h5 class="name">
+                                                <a href="#">john doe</a>
+                                            </h5>
+                                            <span class="email">johndoe@example.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="account-dropdown__body">
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-account"></i>Account</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-settings"></i>Setting</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                        </div>
+                                    </div>
+                                    <div class="account-dropdown__footer">
+                                        <a href="#">
+                                            <i class="zmdi zmdi-power"></i>Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
+       </header>
         </div>
-        <div class="container body-content">
+ 
+            <!-- END HEADER DESKTOP-->
+
+
+        <div class="page-content--bgf7">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
+            <section class="p-t-60 p-b-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Guaranty Trust Bank © 2018. Kindly contact e-Support <a href="https://colorlib.com">E-support</a> for application support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-
+        
     </form>
+    <!-- Jquery JS-->
+    <script src="assets/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="assets/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="assets/vendor/slick/slick.min.js">
+    </script>
+    <script src="assets/vendor/wow/wow.min.js"></script>
+    <script src="assets/vendor/animsition/animsition.min.js"></script>
+    <script src="assets/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="assets/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="assets/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="assets/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="assets/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="assets/vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
